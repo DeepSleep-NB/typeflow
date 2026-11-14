@@ -1,13 +1,15 @@
-# TypeFlow · 极简打字速度测试
+﻿# TypeFlow · 极简打字速度测试
 
 > 一个零依赖、单页面的英文打字速度测试工具。打开即用，支持深浅色主题、三种文本模式与本地成绩记录。
+
+**[▶ 在线试玩](https://deepsleep-nb.github.io/typeflow/)** · **[源码](https://github.com/DeepSleep-NB/typeflow)**
 
 <p align="center">
   <img src="docs/preview.png" alt="TypeFlow 预览" width="880">
 </p>
 
 <p align="center">
-  <a href="https://github.com/-/typeflow/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-6366f1.svg"></a>
+  <a href="https://github.com/DeepSleep-NB/typeflow/blob/main/LICENSE"><img alt="License: MIT" src="https://img.shields.io/badge/license-MIT-6366f1.svg"></a>
   <img alt="no dependencies" src="https://img.shields.io/badge/dependencies-0-06b6d4.svg">
   <img alt="vanilla JS" src="https://img.shields.io/badge/vanilla-HTML%20%2F%20CSS%20%2F%20JS-f7df1e.svg">
 </p>
@@ -29,7 +31,7 @@
 ## 🚀 快速开始
 
 ```bash
-git clone https://github.com/<owner>/typeflow.git
+git clone https://github.com/DeepSleep-NB/typeflow.git
 cd typeflow
 ```
 
@@ -85,7 +87,7 @@ typeflow/
 
 1. 打开仓库 **Settings → Pages**；
 2. 在 **Build and deployment → Source** 选择 **GitHub Actions**；
-3. 等待 Actions 跑完，站点即发布在 `https://<owner>.github.io/typeflow/`。
+3. 等待 Actions 跑完，站点即发布在 `https://deepsleep-nb.github.io/typeflow/`。
 
 一键发布脚本、手动 git 流程与网页上传步骤见 **[DEPLOY.md](DEPLOY.md)**。
 
