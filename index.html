@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>TypeFlow — 极简打字速度测试</title>
+  <meta name="description" content="TypeFlow 是一个零依赖的极简打字速度测试网页应用：实时 WPM、准确率、常用词 / 代码 / 名言三种模式，支持深浅主题与本地成绩记录。" />
+  <meta name="theme-color" content="#0b0f19" />
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236366f1'/%3E%3Ctext x='50' y='70' font-size='58' text-anchor='middle' fill='%23fff' font-family='monospace'%3E%E2%8C%A8%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+<body>
+  <div class="aurora" aria-hidden="true"></div>
+
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="./">
+        <span class="brand-mark">⌨</span>
+        <span class="brand-name">Type<b>Flow</b></span>
+      </a>
+      <div class="topbar-actions">
+        <button id="themeBtn" class="icon-btn" type="button" title="切换主题 (T)" aria-label="切换主题">🌙</button>
+        <a id="repoLink" class="icon-btn" href="#" target="_blank" rel="noopener" title="GitHub 仓库" aria-label="GitHub 仓库">★</a>
+      </div>
+    </header>
+
+    <section class="stats" aria-live="polite">
+      <div class="stat">
+        <span class="stat-value" id="statWpm">0</span>
+        <span class="stat-label">WPM</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="statAcc">100<span class="unit">%</span></span>
+        <span class="stat-label">准确率</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="statTime">30<span class="unit">s</span></span>
+        <span class="stat-label">剩余</span>
+      </div>
+      <div class="stat">
+        <span class="stat-value" id="statBest">—</span>
+        <span class="stat-label">最佳</span>
+      </div>
+    </section>
+
+    <section class="board" id="board" tabindex="0" aria-label="打字区域">
+      <div class="words-viewport">
+        <div class="words" id="words"></div>
+      </div>
+      <div class="hint" id="hint">开始输入即可计时 · <kbd>Tab</kbd> 重来 · <kbd>Esc</kbd> 重置</div>
+    </section>
+
+    <section class="controls">
+      <div class="group" role="group" aria-label="语言/文本类型">
+        <button class="chip" data-set="common" type="button">常用词</button>
+        <button class="chip" data-set="code" type="button">代码</button>
+        <button class="chip" data-set="quotes" type="button">名言</button>
+      </div>
+      <div class="group" role="group" aria-label="时间">
+        <button class="chip" data-duration="15" type="button">15s</button>
+        <button class="chip" data-duration="30" type="button">30s</button>
+        <button class="chip" data-duration="60" type="button">60s</button>
+      </div>
+      <button class="btn ghost" id="restartBtn" type="button">重来</button>
+    </section>
+
+    <footer class="foot">
+      <span>TypeFlow · 零依赖 · MIT License</span>
+      <span class="foot-right">纯静态站点，可离线使用</span>
+    </footer>
+  </main>
+
+  <div class="overlay" id="overlay" hidden>
+    <div class="result-card" role="dialog" aria-modal="true" aria-labelledby="resultTitle">
+      <div class="result-badge" id="resultBadge" hidden>新纪录 🎉</div>
+      <h2 class="result-title" id="resultTitle">本轮结束</h2>
+      <div class="result-grid">
+        <div><span class="r-val" id="rWpm">0</span><span class="r-lab">WPM</span></div>
+        <div><span class="r-val" id="rAcc">0%</span><span class="r-lab">准确率</span></div>
+        <div><span class="r-val" id="rCorrect">0</span><span class="r-lab">正确字符</span></div>
+        <div><span class="r-val" id="rWrong">0</span><span class="r-lab">错误字符</span></div>
+      </div>
+      <div class="result-actions">
+        <button class="btn primary" id="againBtn" type="button">再来一次 <kbd>Tab</kbd></button>
+        <button class="btn" id="closeBtn" type="button">看看成绩 <kbd>Esc</kbd></button>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
