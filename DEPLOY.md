@@ -1,4 +1,4 @@
-# 发布到 GitHub
+﻿# 发布到 GitHub
 
 这个目录已经是一个可以发布的完整项目，三种方式任选其一。
 
@@ -29,12 +29,12 @@ cd typeflow
 git init -b main
 git add .
 git commit -m "feat: TypeFlow 极简打字速度测试"
-git remote add origin https://github.com/<你的用户名>/typeflow.git
+git remote add origin https://github.com/DeepSleep-NB/typeflow.git
 git push -u origin main
 ```
 
 推送后在仓库 **Settings → Pages → Source** 选择 **GitHub Actions**，等 workflow 跑完即可访问
-`https://<你的用户名>.github.io/typeflow/`。
+`https://deepsleep-nb.github.io/typeflow/`。
 
 ## 方式三：网页上传
 
@@ -45,7 +45,7 @@ git push -u origin main
 
 ## 发布后建议做的事
 
-- 把 `README.md` 里的 `<owner>` 替换成你的用户名，让徽章和克隆地址正确；
+- 仓库已指向 `DeepSleep-NB/typeflow`，徽章与克隆地址可直接使用；
 - 在仓库 **About** 里填一句简介，勾上 Website（指向 Pages 地址）；
 - 加几个 Topics：`typing-test`、`vanilla-js`、`web-app`、`no-dependencies`。
 
